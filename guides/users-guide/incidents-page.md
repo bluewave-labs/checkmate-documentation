@@ -2,7 +2,7 @@
 icon: brake-warning
 ---
 
-# Incidents page
+# Viewing incidents
 
 This page shows a list of incidents of all the servers you monitor.&#x20;
 

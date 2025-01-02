@@ -5,7 +5,7 @@ description: >-
 icon: computer-mouse
 ---
 
-# Using Uptime Manager
+# Using Checkmate
 
 ## **General Overview**
 

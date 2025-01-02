@@ -2,7 +2,7 @@
 icon: gauge-min
 ---
 
-# Pagespeed monitoring
+# Pagespeed monitor
 
 Under **Dashboard > Pagespeed**, you can see an overview of pagespeed monitors for different websites. This dashboard helps you view optimal website performance by providing clear, actionable insights into various aspects of your site's speed and user experience.
 
@@ -60,7 +60,11 @@ Here, you can choose between HTTPS (recommended for secure sites) or HTTP protoc
 
 #### Incident notifications&#x20;
 
-Select how you want to be notified when a new incident occurs. Currently the only way is email notifications, but we'll add more soon.
+Select how you want to be notified when there's a new incident:
+
+* Notify via SMS (coming soon)
+* Notify via email (to your email address)
+* Also notify via email to multiple addresses (coming soon)
 
 #### Advanced settings
 

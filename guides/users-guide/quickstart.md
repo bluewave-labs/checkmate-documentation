@@ -2,7 +2,7 @@
 icon: sign-posts-wrench
 ---
 
-# Installing Uptime Manager
+# Installing Checkmate
 
 ## Quickstart for users (quick method) <a href="#user-quickstart" id="user-quickstart"></a>
 

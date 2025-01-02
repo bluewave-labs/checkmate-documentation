@@ -1,6 +1,6 @@
 ---
 icon: hand-wave
-cover: .gitbook/assets/Group 3763.png
+cover: guides/.gitbook/assets/Group 3763.png
 coverY: 0
 layout:
   cover:
@@ -18,7 +18,7 @@ layout:
     visible: true
 ---
 
-# Welcome to Uptime Manager
+# Welcome to Checkmate
 
 Checkmate is an open-source, self-hosted tool designed to track and monitor server hardware, uptime, response times, and incidents in real-time with beautiful visualizations.
 

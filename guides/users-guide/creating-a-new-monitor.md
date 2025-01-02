@@ -2,7 +2,7 @@
 icon: plus
 ---
 
-# Creating a new monitor
+# Uptime monitor
 
 Creating a new monitor involves a few steps, mentioned below.
 
@@ -15,11 +15,15 @@ Creating a new monitor involves a few steps, mentioned below.
 
 * **Website monitoring:** This option uses HTTP(s) to monitor your website or API endpoint. You can choose between HTTPS and HTTP protocols.
 * **Ping monitoring:** Checks whether your server is available. This option is currently unselected.
-* **Docker monitoring:** Checks whether a Docker container is running or not.
+* **Docker monitoring:** Checks whether a Docker container is running
 
 ### Incident notifications
 
-When there's a new incident, you can choose how to be notified. Currently there is one way of notification, via email. In the near future there will be more notification options.
+When there's a new incident, you can choose how to be notified:
+
+* Notify via SMS (coming soon)
+* Notify via email (to the email address you logged in with)
+* Notify via email to multiple addresses (coming soon)
 
 ### Advanced settings
 
