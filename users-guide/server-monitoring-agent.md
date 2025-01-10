@@ -94,43 +94,43 @@ You can build the Capture from the source code.
 
 1. Clone the repository
 
-    ```shell
-    git clone git@github.com:bluewave-labs/capture
-    ```
+   ```shell
+   git clone git@github.com:bluewave-labs/capture
+   ```
 
 2. Change the directory
 
-    ```shell
-    cd capture
-    ```
+   ```shell
+   cd capture
+   ```
 
 3. Build the Capture
 
-    ```shell
-    just build
-    ```
+   ```shell
+   just build
+   ```
 
-    or
+   or
 
-    ```shell
-    go build -o dist/capture ./cmd/capture/
-    ```
+   ```shell
+   go build -o dist/capture ./cmd/capture/
+   ```
 
 4. Run the Capture
 
-    ```shell
-    ./dist/capture
-    ```
+   ```shell
+   ./dist/capture
+   ```
 
 ## Environment Variables
 
 Configure the capture with the following environment variables:
 
-| Variable     | Description                          | Required/Optional |
-| ------------ | ------------------------------------ | ----------------- |
-| `PORT`       | The port that the Capture listens on | Optional          |
-| `API_SECRET` | The secret key for the API           | Required          |
-| `GIN_MODE`   | The mode of the Gin framework        | Optional          |
+| Variable     | Description                          | Required/Optional | Type      | Default Value                         | Accepted Values  |
+| ------------ | ------------------------------------ | ----------------- | --------- | ------------------------------------- | ---------------- |
+| `API_SECRET` | The secret key for the API           | Required          | `string`  | -                                     | Any string value |
+| `PORT`       | The port that the Capture listens on | Optional          | `integer` | 59232                                 | 0 - 65535        |
+| `GIN_MODE`   | The mode of the Gin framework        | Optional          | `string`  | system -> debug <br>docker -> release | release, debug   |
 
 ### Example
 
