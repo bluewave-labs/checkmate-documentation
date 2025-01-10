@@ -6,29 +6,29 @@ icon: eyes
 
 To collect hardware information from your servers, you need Capture, a server monitoring agent for Checkmate. Capture receives requests from Checkmate (server), and sends necessary infrastructure status data.
 
-Capture is a hardware monitoring agent that collects hardware information from the host machine and exposes it through a RESTful API. The agent is designed to be lightweight and easy to use.CommentCapture is only available for **Linux**.&#x20;
-
-You can install the agent using Docker or manually.
-
-## Capture: Hardware Monitoring Agent
-
 Capture is a hardware monitoring agent that collects hardware information from the host machine and exposes it through a RESTful API. The agent is designed to be lightweight and easy to use.
 
-Capture is only available for **Linux**. You can install the agent using Docker or manually.
+Capture is only available for **Linux**.
 
-### Docker Installation
+## Docker Installation
 
-There are two ways to install the agent using Docker. Currently the only way is to build the image from the source code, but we'll provide Docker images soon.
+Docker installation is **recommended** for running the Capture. Please see the [Docker run flags](#docker-run-flags) section for more information.
 
-#### Build
+Pull the image from the registry and then run it with one command.
+
+```shell
+docker run -v /etc/os-release:/etc/os-release:ro \
+    -p 59232:59232 \
+    -e API_SECRET=REPLACE_WITH_YOUR_SECRET \
+    -d \
+    ghcr.io/bluewave-labs/capture:latest
+```
+
+If you don't want to pull the image, you can build and run it locally.
 
 ```shell
 docker buildx build -f Dockerfile -t capture .
 ```
-
-#### Run
-
-Run the container with specified flags
 
 ```shell
 docker run -v /etc/os-release:/etc/os-release:ro \
@@ -38,34 +38,65 @@ docker run -v /etc/os-release:/etc/os-release:ro \
     capture:latest
 ```
 
-You can access the agent at [http://localhost:59232](http://localhost:59232)
+### Docker run flags
 
-### Manual Installation
+Before running the container, please make sure to replace the `REPLACE_WITH_YOUR_SECRET` with your own secret.
 
-#### Requirements
+! **You need to put this secret to Checkmate's infrastructure monitoring dashboard**
 
-* [Git](https://git-scm.com/downloads) is essential for cloning the repository.
-* [Go](https://go.dev/dl/) is required to build the project.
-* [Just](https://github.com/casey/just) is optional but **recommended** for building the project with pre-defined commands.
+- `-v /etc/os-release:/etc/os-release:ro` to get platform information correctly
+- `-p 59232:59232` to expose the port 59232
+- `-d` to run the container in detached mode
+- `-e API_SECRET=REPLACE_WITH_YOUR_SECRET` to set the API secret
+- (optional) `-e GIN_MODE=release/debug` to switch between release and debug mode
 
-#### Build from Source
+```shell
+docker run -v /etc/os-release:/etc/os-release:ro \
+    -p 59232:59232 \
+    -e API_SECRET=REPLACE_WITH_YOUR_SECRET \
+    -d \
+    ghcr.io/bluewave-labs/capture:latest
+```
 
-1.  Git Clone
+## System Installation
+
+### Pre-built Binaries
+
+You can download the pre-built binaries from the [GitHub Releases](https://github.com/bluewave-labs/capture/releases) page.
+
+### Go Package
+
+You can install the Capture using the `go install` command.
+
+```shell
+go install github.com/bluewave-labs/capture/cmd/capture@latest
+```
+
+### Build from Source
+
+You can build the Capture from the source code.
+
+#### Prerequisites
+
+- [Git](https://git-scm.com/downloads) is essential for cloning the repository.
+- [Go](https://go.dev/dl/) is required to build the project.
+- [Just](https://github.com/casey/just/releases) is optional but **recommended** for building the project with pre-defined commands.
+
+#### Steps
+
+1. Clone the repository
 
     ```shell
-    git clone git@github.com:bluewave-labs/capture.git
+    git clone git@github.com:bluewave-labs/capture
     ```
-2.  Change your directory
+
+2. Change the directory
 
     ```shell
     cd capture
     ```
-3.  Install dependencies
 
-    ```shell
-    go mod download
-    ```
-4.  Build the project
+3. Build the Capture
 
     ```shell
     just build
@@ -74,43 +105,41 @@ You can access the agent at [http://localhost:59232](http://localhost:59232)
     or
 
     ```shell
-    go build -o capture ./cmd/capture/
+    go build -o dist/capture ./cmd/capture/
     ```
-5.  Run the project
+
+4. Run the Capture
 
     ```shell
-    ./capture
+    ./dist/capture
     ```
-6. You can access the agent at `http://localhost:59232`
 
-#### `go install`
+## Environment Variables
 
-You can also install the agent using `go install` command.
+Configure the capture with the following environment variables:
 
-```shell
-go install github.com/bluewave-labs/capture/cmd/capture@latest
-```
+| Variable     | Description                          | Required/Optional |
+| ------------ | ------------------------------------ | ----------------- |
+| `PORT`       | The port that the Capture listens on | Optional          |
+| `API_SECRET` | The secret key for the API           | Required          |
+| `GIN_MODE`   | The mode of the Gin framework        | Optional          |
 
-Make sure the installed binary is executable
+### Example
 
-```shell
-# Make sure $GOPATH/bin is in your PATH
-chmod +x $(go env GOPATH)/bin/capture
-```
+Please make sure to replace the default `your_secret` with your own secret.
 
-Run the installed binary
+! **You need to put this secret to Checkmate's infrastructure monitoring dashboard**
 
 ```shell
-capture
+PORT = your_port
+API_SECRET = your_secret
+GIN_MODE = release/debug
 ```
 
-### Environment Variables
+```shell
+# API_SECRET is required
+API_SECRET=your_secret GIN_MODE=release ./capture
 
-You can configure the agent using environment variables.
-
-| ENV Variable Name  | Required/Optional | Type      | Default Value                               | Description                          | Accepted Values |
-| ------------------ | ----------------- | --------- | ------------------------------------------- | ------------------------------------ | --------------- |
-| PORT               | Optional          | `integer` | 59232                                       | Specifies Port for Server            | 0 - 65535       |
-| API\_SECRET        | Required          | `string`  | -                                           | API Secret                           | Any string      |
-| ALLOW\_PUBLIC\_API | Optional          | `boolean` | false                                       | Allow or deny publicly available api | true, false     |
-| GIN\_MODE          | Optional          | `string`  | <p>system -> debug<br>docker -> release</p> | Gin mode                             | debug, release  |
+# Minimal required configuration
+API_SECRET=your_secret ./dist/capture
+```
