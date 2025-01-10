@@ -64,6 +64,14 @@ docker run -v /etc/os-release:/etc/os-release:ro \
 
 You can download the pre-built binaries from the [GitHub Releases](https://github.com/bluewave-labs/capture/releases) page.
 
+Recommended installation path is `/usr/local/bin`.
+
+Do not forget to make the binary executable.
+
+```shell
+chmod +x /usr/local/bin/capture
+```
+
 ### Go Package
 
 You can install the Capture using the `go install` command.
