@@ -4,7 +4,7 @@ icon: syringe
 
 # Troubleshooting
 
-**Q: I installed Checkmate, but I don't see the registration page to sign up for the first time**&#x20;
+### **Q: I installed Checkmate, but I don't see the registration page to sign up for the first time**&#x20;
 
 A: Normally the application will automatically redirect you to the register page if you have not yet created an account.
 
