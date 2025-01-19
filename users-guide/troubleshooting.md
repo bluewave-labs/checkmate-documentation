@@ -56,3 +56,20 @@ If the client cannot reach the server then the server client does not know that 
 
 If you are not redirected to /register and you cannot see the sign up page automatically, then client cannot reach the server. Make sure the Checkmate Docker server is running.
 
+### Q: I have local Docker volume enabled and I setup two Docker container monitors. The state remains at "pending".
+
+You can use [Docker socket proxy](https://github.com/Tecnativa/docker-socket-proxy) to expose the socket to Checkmate.
+
+12
+
+<details>
+
+<summary></summary>
+
+
+
+</details>
+
+\
+
+
