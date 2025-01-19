@@ -60,7 +60,7 @@ If you are not redirected to /register and you cannot see the sign up page autom
 
 You can use [Docker socket proxy](https://github.com/Tecnativa/docker-socket-proxy) to expose the socket to Checkmate.
 
-12
+
 
 <details>
 
