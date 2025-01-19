@@ -15,7 +15,7 @@ Creating a new monitor involves a few steps, as mentioned below.
 
 * **Website monitoring:** This option uses HTTP(s) to monitor your website or API endpoint. You can choose between HTTPS and HTTP protocols.
 * **Ping monitoring:** Checks whether your server is available.&#x20;
-* **Docker monitoring:** Checks whether a Docker container is running. To do this, you need to expose your Docker daemon.
+* **Docker monitoring:** Checks whether a Docker container is running. To do this, you need to expose your Docker daemon. This feature is experimental.
 
 ### Incident notifications
 
