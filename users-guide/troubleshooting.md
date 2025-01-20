@@ -60,6 +60,53 @@ If you are not redirected to /register and you cannot see the sign up page autom
 
 You can use [Docker socket proxy](https://github.com/Tecnativa/docker-socket-proxy) to expose the socket to Checkmate.
 
+### Q: Checkmate server fails to interact with docker.sock. How do I fix it?&#x20;
+
+If the Checkmate server fails to interact with docker.sock when mounting the volume, follow those troubleshooting steps:
+
+#### 1. Verify Docker group membership:
+
+* Check the Docker group: Determine the Group ID (GID) of the Docker group.
+
+```bash
+getent group docker # This will usually return something like docker:281)
+```
+
+#### 2. Configure Checkmate server user
+
+Method 1 (Direct docker.sock mount): Ensure the user field in your Checkmate server configuration includes the GID of the Docker group.
+
+* Compose YAML:
+  * user: nobody:281
+
+or
+
+* Compose YAML:
+  * user: nobody:\<Docker Group Name>
+
+Important: The User ID (UID) is typically not critical for this scenario.
+
+* For docker CLI you would add new container variables:
+  * PUID: UID
+  * PGID: Docker GID
+
+Another method is that, if using a Docker socket proxy, ensure the DOCKER\_HOST environment variable is correctly set:
+
+* Compose YAML
+  * environment:
+  * \- DOCKER\_HOST=tcp://docker-socket-proxy:2375
+
+3. **Check Docker socket permissions**
+
+Verify read-only access: If mounting \`docker.sock\` directly, ensure the read\_only: true option is set in your Checkmate server configuration. This prevents accidental modifications to the Docker daemon.&#x20;
+
+Restart Checkmate server: After making any configuration changes, restart the Checkmate server to apply the updates.
+
+#### 4. Test Docker interaction:
+
+Once the server is restarted, set up a new docker container monitoring with your container ID within your Checkmate server. Monitor the server logs for any error messages related to Docker communication.\
+
+
 
 
 <details>
