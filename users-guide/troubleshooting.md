@@ -54,11 +54,21 @@ A: Normally the application will automatically redirect you to the register page
 
 If the client cannot reach the server then the server client does not know that you do not have an account yet and won't redirect you.
 
-If you are not redirected to /register and you cannot see the sign up page automatically, then client cannot reach the server. Make sure the Checkmate Docker server is running.
+If you are not redirected to /register and cannot see the sign-up page automatically, this means that the client cannot reach the server. Make sure the Checkmate Docker server is running.
 
-### Q: I have local Docker volume enabled and I setup two Docker container monitors. The state remains at "pending".
+### Q: I enabled local Docker volume and set up two Docker container monitors. The state remains at "pending".
 
-You can use [Docker socket proxy](https://github.com/Tecnativa/docker-socket-proxy) to expose the socket to Checkmate.
+You can use a [Docker socket proxy](https://github.com/Tecnativa/docker-socket-proxy) to expose the socket to Checkmate.
+
+### Q: I can't access Checkmate outside the host machine
+
+Problem: I'm running Checkmate on a machine (like with IP `192.168.1.2`). I can access it via [http://localhost/](http://localhost/) and it works well. But if I want to access it outside this machine, it doesn't work. I open [http://192.168.1.2/](http://192.168.1.2/), and it loads some part of the UI, but fails after.
+
+Solution: You need to specify the IP address of your host machine (`192.168.1.2` in our case) in `docker-compose.yml`, do the client part know, where the server is. You can do it by updating the address in this variable:
+
+```
+UPTIME_APP_API_BASE_URL: "http://192.168.1.2:5000/api/v1"
+```
 
 ### Q: Checkmate server fails to interact with docker.sock. How do I fix it?&#x20;
 
