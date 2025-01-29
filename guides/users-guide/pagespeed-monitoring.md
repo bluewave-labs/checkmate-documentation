@@ -21,6 +21,7 @@ When you click on a pagespeed card, you'll see an overview of data collected usi
 ### Score history graph
 
 Shows performance trends over the past 24 hours. Four colored lines represent different metrics:
+<figure><img src="../.gitbook/assets/color index -pagemonitoring.png" alt=""><figcaption></figcaption></figure>
 
 * Accessibility (blue)
 * Best Practices (orange)
@@ -60,11 +61,7 @@ Here, you can choose between HTTPS (recommended for secure sites) or HTTP protoc
 
 #### Incident notifications&#x20;
 
-Select how you want to be notified when there's a new incident:
-
-* Notify via SMS (coming soon)
 * Notify via email (to your email address)
-* Also notify via email to multiple addresses (coming soon)
 
 #### Advanced settings
 

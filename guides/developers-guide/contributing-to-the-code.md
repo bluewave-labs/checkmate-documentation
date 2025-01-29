@@ -6,7 +6,7 @@ icon: list-check
 
 We generally follow the [gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) workflow model.  If you’re not familiar with it, the general steps are
 
-1. Create a feature branch in your local depository and make your changes.
+1. Create a feature branch in your local repository and make your changes.
 2. Push your branch to the remote repository on Github.
 3. Open a pull request.
 4. The rest of the team will review the pull request and either approve or request changes.
