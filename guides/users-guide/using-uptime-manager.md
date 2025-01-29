@@ -11,6 +11,7 @@ icon: computer-mouse
 
 Checkmate is an open-source server monitoring tool designed to track the uptime, downtime, and performance of servers, websites, or web applications.&#x20;
 
+<figure><img src="../.gitbook/assets/d2.svg" alt=""><figcaption></figcaption></figure>
 It provides real-time alerts, status updates, and detailed response time metrics.
 
 ### **Sidebar menu**&#x20;

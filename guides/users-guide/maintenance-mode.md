@@ -14,6 +14,8 @@ When you click the **"Create Maintenance Window"** button, you will see a page s
 
 Here's how to set up a new maintenance window:
 
+<!--ARCADE EMBED START--><div style="position: relative; padding-bottom: calc(43.083333333333336% + 41px); height: 0; width: 100%;"><iframe src="https://demo.arcade.software/IEdCIoKeVopnPX0XpxxW?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true" title="Checkmate" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;" ></iframe></div><!--ARCADE EMBED END-->
+
 **General settings:**
 
 * **Maintenance repeat**: Select how often the maintenance window should repeat (e.g., don't repeat, daily, weekly).
