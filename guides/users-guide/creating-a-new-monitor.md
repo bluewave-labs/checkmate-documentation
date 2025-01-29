@@ -6,16 +6,7 @@ icon: plus
 
 Monitor your infrastructure with ease. Follow these steps to create a new monitor in **Checkmate.so**:
 
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#146eee', 'edgeLabelBackground':'#0e0e11', 'tertiaryColor': '#0e0e11', 'primaryTextColor': '#ffffff', 'secondaryTextColor': '#ffffff'}}}%%
-graph LR
-    A[Start: Create a New Monitor] --> B[Enter General Settings]
-    B --> C[Choose Checks to Perform]
-    C --> D[Configure Incident Notifications]
-    D --> E[Set Advanced Options]
-    E --> F[Review and Create Monitor]
-    F --> G[Monitor Active] --> H[Receive Notifications on Incidents]
-```
+
 ---
 
 
