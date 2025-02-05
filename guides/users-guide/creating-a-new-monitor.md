@@ -1,5 +1,5 @@
 ---
-icon: plus
+icon: chart-simple
 ---
 
 # Uptime Monitor

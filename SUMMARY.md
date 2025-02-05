@@ -15,6 +15,7 @@
 * [User settings](guides/users-guide/user-settings.md)
 * [Server monitoring agent](users-guide/server-monitoring-agent.md)
 * [Troubleshooting](users-guide/troubleshooting.md)
+* [Server requirements](users-guide/server-requirements.md)
 
 ## DEVELOPER'S GUIDE
 
