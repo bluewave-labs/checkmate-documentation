@@ -57,3 +57,4 @@ Once all settings are configured, click the **Create Infrastructure Monitor** bu
 
 Your new infrastructure monitor will now appear in the monitoring dashboard, and it will actively track the server based on your selected preferences.
 
+<figure><img src="../.gitbook/assets/steps_infra.png" alt=""><figcaption></figcaption></figure>

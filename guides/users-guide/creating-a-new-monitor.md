@@ -6,7 +6,7 @@ icon: chart-simple
 
 Monitor your infrastructure with ease. Follow these steps to create a new monitor in **Checkmate.so**:
 
-
+<figure><img src="../.gitbook/assets/createnewmonitor.png" alt=""><figcaption></figcaption></figure>
 ---
 
 

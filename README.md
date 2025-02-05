@@ -28,7 +28,7 @@ It uses [Capture](https://github.com/bluewave-labs/capture) to get data from rem
 
 We have a [demo](https://checkmate-demo.bluewavelabs.ca) where you can test how the Uptime Manager works. The username is **uptimedemo@demo.com** and the password is **Demouser1!**
 
-{% embed url="https://app.storylane.io/share/moutjamneoih" %}
+{% embed url="https://app.arcade.software/share/9WOI5tW0favJcNeyIuSr" %}
 
 
 ## Questions & ideas
