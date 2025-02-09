@@ -9,6 +9,7 @@
 * [Uptime monitor](guides/users-guide/creating-a-new-monitor.md)
 * [Pagespeed monitor](guides/users-guide/pagespeed-monitoring.md)
 * [Infrastructure monitor](users-guide/infrastructure-monitor.md)
+* [Distributed uptime](users-guide/distributed-uptime.md)
 * [Viewing incidents](guides/users-guide/incidents-page.md)
 * [Maintenance mode](guides/users-guide/maintenance-mode.md)
 * [Server settings](guides/users-guide/server-settings.md)
