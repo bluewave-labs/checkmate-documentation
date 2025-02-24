@@ -56,6 +56,10 @@ If the client cannot reach the server then the server client does not know that 
 
 If you are not redirected to /register and cannot see the sign-up page automatically, this means that the client cannot reach the server. Make sure the Checkmate Docker server is running.
 
+### Q: I get "Uncaught (in promise) Error" and monitors added but keep pending
+
+If you get an error similar to "Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received at v (VM7845 vendor.js:142:18472)", remove your "AdBlocker Ultimate". This adblocker is known to not work with Checkmate. &#x20;
+
 ### Q: I enabled local Docker volume and set up two Docker container monitors. The state remains at "pending".
 
 You can use a [Docker socket proxy](https://github.com/Tecnativa/docker-socket-proxy) to expose the socket to Checkmate.
