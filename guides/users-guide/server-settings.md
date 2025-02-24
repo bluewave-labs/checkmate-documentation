@@ -16,4 +16,4 @@ Define here for how long you want to keep the data. You can also remove all past
 
 ### Demo monitors
 
-Here you can add and remove demo monitors. It will load roughly 300 demo monitors at the same time so you can test your server.
+Here you can add and remove demo monitors. It will create 3 demo monitors at the same time so you can test your server.
