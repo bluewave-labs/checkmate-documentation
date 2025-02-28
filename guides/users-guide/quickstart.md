@@ -12,7 +12,7 @@ icon: sign-posts-wrench
 
 **Optional Config:**
 
-- If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
+* If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
 
 ```
   # volumes:
@@ -21,7 +21,7 @@ icon: sign-posts-wrench
 
 This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
 
----
+***
 
 ## Quickstart for users (remote server) <a href="#user-quickstart" id="user-quickstart"></a>
 
@@ -32,7 +32,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 **Optional Config:**
 
-- If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
+* If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
 
 ```
   # volumes:
@@ -41,7 +41,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
 
----
+***
 
 ## Quickstart for developers <a href="#dev-quickstart" id="dev-quickstart"></a>
 
@@ -51,46 +51,46 @@ Make sure you change the directory to the specified directories, as paths in com
 
 ### Cloning and initial setup
 
-This application consists of a Front End (Client) and a Back End (Server). We recommend you create a directory, let's call it `checkmate`, to hold both the **Client** and the **Server** in one location.
+This application consists of a frontend (client) and a backend (server). We recommend you create a directory, let's call it `checkmate`, to hold both the **Client** and the **Server** in one location.
 
-1.  CD into your `checkmate` directory
-2.  Clone the [Client repository](https://github.com/bluewave-labs/checkmate). We'll refer to this directory as `client`
-3.  Clone the [Server repository](https://github.com/bluewave-labs/checkmate-backend). We'll refer to this directory as `server`
+1. CD into your `checkmate` directory
+2. Clone the [Client repository](https://github.com/bluewave-labs/checkmate). We'll refer to this directory as `client`
+3. Clone the [Server repository](https://github.com/bluewave-labs/checkmate-backend). We'll refer to this directory as `server`
 
 ### Setting up Docker images
 
 This application requires a MongoDB instance and a Redis instance. If you want, you can use our Docker images. Otherwise you can provide your own instances.
 
-1.  From your `checkmate` directory you created above, CD into `server/docker/dev`.
-2.  Run `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
-3.  Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`
+1. From your `checkmate` directory you created above, CD into `server/docker/dev`.
+2. Run `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
+3. Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`
 
 ### Server set up
 
 The server requires some configuration in order to run.
 
-1.  From your `checkmate` directory, CD into the `server` directory.
-2.  Run `npm install`.
-3.  In the `server` directory, create a `.env` file to hold your configuration.
-4.  Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-server).
-5.  Start the `server` by running `npm run dev`.
+1. From your `checkmate` directory, CD into the `server` directory.
+2. Run `npm install`.
+3. In the `server` directory, create a `.env` file to hold your configuration.
+4. Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-server).
+5. Start the `server` by running `npm run dev`.
 
 ### Client set up
 
 The client also requires some configuration in order to run.
 
-1.  From your `checkmate` directory, CD into the `client` directory.
-2.  Run `npm install`.
-3.  In the `client` directory, create a `.env` file to hold your configuration.
-4.  Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-client).
-5.  Start the `client` by running `npm run dev`
+1. From your `checkmate` directory, CD into the `client` directory.
+2. Run `npm install`.
+3. In the `client` directory, create a `.env` file to hold your configuration.
+4. Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-client).
+5. Start the `client` by running `npm run dev`
 
 ### Access the application
 
 1. The `client` is running at `localhost:5173` (unless you changed the default port).
 2. The `server` is running at `localhost:5000` (unless you changed the default port).
 
----
+***
 
 ### Client env vars <a href="#install-client" id="install-client"></a>
 
@@ -100,11 +100,11 @@ The client also requires some configuration in order to run.
 
 #### Environment variables <a href="#env-vars-client" id="env-vars-client"></a>
 
-| ENV Variable Name     | Required/Optional | Type      | Description        | Accepted Values                    |
-| --------------------- | ----------------- | --------- | ------------------ | ---------------------------------- |
-| VITE_APP_API_BASE_URL | Required          | `string`  | Base URL of server | {host}/api/v1                      |
-| VITE_APP_LOG_LEVEL    | Optional          | `string`  | Log level          | `"none"`\|`"error"` \| `"warn"` \| |
-| VITE_APP_DEMO         | Optional          | `boolean` | Demo server or not | `true`\|`false` \|                 |
+| ENV Variable Name         | Required/Optional | Type      | Description        | Accepted Values                    |
+| ------------------------- | ----------------- | --------- | ------------------ | ---------------------------------- |
+| VITE\_APP\_API\_BASE\_URL | Required          | `string`  | Base URL of server | {host}/api/v1                      |
+| VITE\_APP\_LOG\_LEVEL     | Optional          | `string`  | Log level          | `"none"`\|`"error"` \| `"warn"` \| |
+| VITE\_APP\_DEMO           | Optional          | `boolean` | Demo server or not | `true`\|`false` \|                 |
 
 Sample ENV file:
 
@@ -144,7 +144,7 @@ REFRESH_TOKEN_SECRET="my_refresh"
 REFRESH_TOKEN_TTL="99d"
 ```
 
----
+***
 
 ### API documentation <a href="#api-documentation" id="api-documentation"></a>
 
@@ -183,7 +183,6 @@ const myRoute = async(req, res, next) => {
     return;
   }
 }
-
 ```
 
 Errors should not be handled at the controller level and should be left to the middleware to handle.
