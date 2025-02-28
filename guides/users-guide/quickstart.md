@@ -12,7 +12,7 @@ icon: sign-posts-wrench
 
 **Optional Config:**
 
-* If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
+- If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
 
 ```
   # volumes:
@@ -21,7 +21,7 @@ icon: sign-posts-wrench
 
 This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
 
-***
+---
 
 ## Quickstart for users (remote server) <a href="#user-quickstart" id="user-quickstart"></a>
 
@@ -32,7 +32,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 **Optional Config:**
 
-* If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
+- If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
 
 ```
   # volumes:
@@ -41,7 +41,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
 
-***
+---
 
 ## Quickstart for developers <a href="#dev-quickstart" id="dev-quickstart"></a>
 
@@ -51,38 +51,48 @@ Make sure you change the directory to the specified directories, as paths in com
 
 ### Cloning and initial setup
 
-1. Clone this repository.
-2. Checkout the `develop` branch `git checkout develop`
+This application consists of a Front End (Client) and a Back End (Server). We recommend you create a directory, let's call it `checkmate`, to hold both the **Client** and the **Server** in one location.
+
+1.  CD into your `checkmate` directory
+2.  Clone the [Client repository](https://github.com/bluewave-labs/checkmate). We'll refer to this directory as `client`
+3.  Clone the [Server repository](https://github.com/bluewave-labs/checkmate-backend). We'll refer to this directory as `server`
 
 ### Setting up Docker images
 
-3. Change directory to the `Docker/dev` directory
-4. Build the docker images by running the `build_images.sh` script
-5. Run `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
-6. Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`
+This application requires a MongoDB instance and a Redis instance. If you want, you can use our Docker images. Otherwise you can provide your own instances.
 
-### Server setup
+1.  From your `checkmate` directory you created above, CD into `server/docker/dev`.
+2.  Run `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
+3.  Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`
 
-6. CD to `Server` directory, and run `npm install`
-7. While in `Server` directory, create a `.env` file with the [required environmental variables](quickstart.md#env-vars-server)
-8. While in the `Server` directory, run `npm run dev`
+### Server set up
 
-### Client setup
+The server requires some configuration in order to run.
 
-9. CD to `Client` directory `run npm install`
-10. While in the `Client` directory, create a `.env` file with the [required environmental variables](quickstart.md#env-vars-client)
-11. While in the `Client` directory run `npm run dev`
+1.  From your `checkmate` directory, CD into the `server` directory.
+2.  Run `npm install`.
+3.  In the `server` directory, create a `.env` file to hold your configuration.
+4.  Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-server).
+5.  Start the `server` by running `npm run dev`.
+
+### Client set up
+
+The client also requires some configuration in order to run.
+
+1.  From your `checkmate` directory, CD into the `client` directory.
+2.  Run `npm install`.
+3.  In the `client` directory, create a `.env` file to hold your configuration.
+4.  Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-client).
+5.  Start the `client` by running `npm run dev`
 
 ### Access the application
 
-12. Client is now running at `localhost:5173`
-13. Server is now running at `localhost:5000`
+1. The `client` is running at `localhost:5173` (unless you changed the default port).
+2. The `server` is running at `localhost:5000` (unless you changed the default port).
 
-***
+---
 
-## Manual installation <a href="#manual-install" id="manual-install"></a>
-
-### Client installation <a href="#install-client" id="install-client"></a>
+### Client env vars <a href="#install-client" id="install-client"></a>
 
 1. Change directory to the `Client` directory
 2. Install all dependencies by running `npm install`
@@ -90,11 +100,11 @@ Make sure you change the directory to the specified directories, as paths in com
 
 #### Environment variables <a href="#env-vars-client" id="env-vars-client"></a>
 
-| ENV Variable Name         | Required/Optional | Type      | Description        | Accepted Values                    |
-| ------------------------- | ----------------- | --------- | ------------------ | ---------------------------------- |
-| VITE\_APP\_API\_BASE\_URL | Required          | `string`  | Base URL of server | {host}/api/v1                      |
-| VITE\_APP\_LOG\_LEVEL     | Optional          | `string`  | Log level          | `"none"`\|`"error"` \| `"warn"` \| |
-| VITE\_APP\_DEMO           | Optional          | `boolean` | Demo server or not | `true`\|`false` \|                 |
+| ENV Variable Name     | Required/Optional | Type      | Description        | Accepted Values                    |
+| --------------------- | ----------------- | --------- | ------------------ | ---------------------------------- |
+| VITE_APP_API_BASE_URL | Required          | `string`  | Base URL of server | {host}/api/v1                      |
+| VITE_APP_LOG_LEVEL    | Optional          | `string`  | Log level          | `"none"`\|`"error"` \| `"warn"` \| |
+| VITE_APP_DEMO         | Optional          | `boolean` | Demo server or not | `true`\|`false` \|                 |
 
 Sample ENV file:
 
@@ -103,11 +113,7 @@ VITE_APP_API_BASE_URL="http://localhost:5000/api/v1"
 VITE_APP_LOG_LEVEL="debug"
 ```
 
-#### Starting the Client development server <a href="#start-client" id="start-client"></a>
-
-1. Run `npm run dev` to start the development server.
-
-### Server Installation <a href="#install-server" id="install-server"></a>
+### Server env vars <a href="#install-server" id="install-server"></a>
 
 1. Change the directory to the `Server` directory
 2. Install all dependencies by running `npm install`
@@ -138,62 +144,7 @@ REFRESH_TOKEN_SECRET="my_refresh"
 REFRESH_TOKEN_TTL="99d"
 ```
 
-***
-
-#### Databases <a href="#databases" id="databases"></a>
-
-This project requires two databases:
-
-1. **Main application database:** The project uses MongoDB for its primary database, with a MongoDB Docker image provided for easy setup.
-2. **Redis for queue management:** A Redis database is used for the PingService’s queue system, and a Redis Docker image is included for deployment.
-
-You may use the included Dockerfiles to spin up databases quickly if you wish.
-
-**(Optional) Dockerised databases**
-
-Dockerfiles for the server and databases are located in the `Docker` directory
-
-<details>
-
-<summary>MongoDB Image</summary>
-
-Location: `Docker/mongoDB.Dockerfile`
-
-The `Docker/mongo/data` directory should be mounted to the MongoDB container in order to persist data.
-
-From the `Docker` directory run
-
-1. Build the image: `docker build -f mongoDB.Dockerfile -t uptime_database_mongo .`
-2. Run the docker image: `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`
-
-</details>
-
-<details>
-
-<summary>Redis Image</summary>
-
-Location `Docker/redis.Dockerfile`
-
-the `Docker/redis/data` directory should be mounted to the Redis container in order to persist data.
-
-From the `Docker` directory run
-
-1. Build the image: `docker build -f redis.Dockerfile -t uptime_redis .`
-2. Run the image: `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
-
-</details>
-
-***
-
-#### Starting the development server <a href="#start-server" id="start-server"></a>
-
-* run `npm run dev` to start the development server
-
-or,
-
-* run `node index.js` to start server
-
-***
+---
 
 ### API documentation <a href="#api-documentation" id="api-documentation"></a>
 
