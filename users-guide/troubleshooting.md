@@ -74,7 +74,7 @@ Solution: You need to specify the IP address of your host machine (`192.168.1.2`
 UPTIME_APP_API_BASE_URL: "http://192.168.1.2:5000/api/v1"
 ```
 
-### Is it possible to increase the login token expiry?
+### Q: Is it possible to increase the login token expiry?
 
 Yes, this is configurable via the env file. TOKEN\_TTL is the parameter you would want to set.&#x20;
 
