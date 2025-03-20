@@ -6,9 +6,15 @@ icon: gauge-min
 
 Under **Dashboard > Pagespeed**, you can see an overview of pagespeed monitors for different websites. This dashboard helps you view optimal website performance by providing clear, actionable insights into various aspects of your site's speed and user experience.
 
+{% hint style="warning" %}
+The Pagespeed section requires a Google PageSpeed API. Click [here](https://developers.google.com/speed/docs/insights/v5/get-started) and get your API, and then add it to your .env variable (PAGESPEED\_API\_KEY). See [quickstart.md](quickstart.md "mention") section on how to add this API key.
+{% endhint %}
+
+
+
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-03 at 11.37.47 PM (1).png" alt=""><figcaption></figcaption></figure>
 
-When you add a new page speed monitor, it is added here. Click on the "Create new" button to add a new page speed.&#x20;
+When you add a new page speed monitor, it is added here. Click on the "Create new" button to add a new page speed.
 
 Here, both monitors are shown as "Live (Collecting Data)" with a green dot, indicating they are actively monitoring. Each monitor has a small graph, representing recent pagespeed performance over time.
 
@@ -16,11 +22,12 @@ Here, both monitors are shown as "Live (Collecting Data)" with a green dot, indi
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-03 at 11.41.55 PM.png" alt=""><figcaption></figcaption></figure>
 
-When you click on a pagespeed card, you'll see an overview of data collected using Google's PageSpeed Monitor API.&#x20;
+When you click on a pagespeed card, you'll see an overview of data collected using Google's PageSpeed Monitor API.
 
 ### Score history graph
 
 Shows performance trends over the past 24 hours. Four colored lines represent different metrics:
+
 <figure><img src="../.gitbook/assets/color index -pagemonitoring.png" alt=""><figcaption></figcaption></figure>
 
 * Accessibility (blue)
@@ -32,7 +39,7 @@ You can toggle these metrics on/off using the checkboxes on the right
 
 ### Performance report
 
-You'll see an overall score of your server's pagespeed.&#x20;
+You'll see an overall score of your server's pagespeed.
 
 ### Performance metrics
 
@@ -42,9 +49,9 @@ You'll see an overall score of your server's pagespeed.&#x20;
 * **Largest Contentful Paint:** Time until the largest content element is rendered
 * **Total Blocking Time:** Sum of all periods between FCP and Time to Interactive
 
-### Creating a new pagespeed&#x20;
+### Creating a new pagespeed
 
-When you are on a pagespeed screen, click on the "Create pagespeed" button. You'll see a screen similar to this:&#x20;
+When you are on a pagespeed screen, click on the "Create pagespeed" button. You'll see a screen similar to this:
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-03 at 11.47.41 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -59,7 +66,7 @@ This page allows you to set up a new pagespeed monitor for your website. Follow 
 
 Here, you can choose between HTTPS (recommended for secure sites) or HTTP protocols.
 
-#### Incident notifications&#x20;
+#### Incident notifications
 
 * Notify via email (to your email address)
 
@@ -77,10 +84,3 @@ After configuring all settings, click the "Create monitor" button at the bottom 
 * Remember to enable your preferred notification methods to stay informed about incidents.
 
 After creating the monitor, you'll be able to view its performance data in your dashboard. This will help you track your website's pagespeed and optimize its performance over time.
-
-
-
-
-
-
-
