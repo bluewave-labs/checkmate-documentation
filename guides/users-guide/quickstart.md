@@ -144,6 +144,10 @@ REFRESH_TOKEN_SECRET="my_refresh"
 REFRESH_TOKEN_TTL="99d"
 ```
 
+{% hint style="warning" %}
+Note that for the Pagespeed feature to work, you need a [free Google Pagespeed API key from this link.](https://developers.google.com/speed/docs/insights/v5/get-started)
+{% endhint %}
+
 ***
 
 ### API documentation <a href="#api-documentation" id="api-documentation"></a>
