@@ -71,7 +71,7 @@ The server requires some configuration in order to run.
 
 1. From your `checkmate` directory, CD into the `server` directory.
 2. Run `npm install`.
-3. In the `server` directory, create a `.env` file to hold your configuration.
+3. In the `server` directory, create a `.env` file to hold your configuration. This is where you'll add your environment variables.
 4. Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-server).
 5. Start the `server` by running `npm run dev`.
 
@@ -81,7 +81,7 @@ The client also requires some configuration in order to run.
 
 1. From your `checkmate` directory, CD into the `client` directory.
 2. Run `npm install`.
-3. In the `client` directory, create a `.env` file to hold your configuration.
+3. In the `client` directory, create a `.env` file to hold your configuration. This is where you'll add your environment variables.
 4. Add the [required environmental variables](https://docs.checkmate.so/users-guide/quickstart#env-vars-client).
 5. Start the `client` by running `npm run dev`
 
@@ -121,7 +121,9 @@ VITE_APP_LOG_LEVEL="debug"
 
 #### Environment variables <a href="#env-vars-server" id="env-vars-server"></a>
 
-Configure the server with the following environmental variables:
+Configure the server with the following environmental variables. **Note that those variables need to be set in `.env` files if you are running the local development server, or in the Docker compose file if you use docker compose.**
+
+
 
 <table><thead><tr><th width="239">ENV Variable Name</th><th width="149">Required/Optional</th><th width="116">Type</th><th>Description</th><th>Accepted Values</th></tr></thead><tbody><tr><td>CLIENT_HOST</td><td>Required</td><td><code>string</code></td><td>Frontend Host</td><td></td></tr><tr><td>JWT_SECRET</td><td>Required</td><td><code>string</code></td><td>JWT secret</td><td></td></tr><tr><td>REFRESH_TOKEN_SECRET</td><td>Required</td><td><code>string</code></td><td>Refresh JWT secret</td><td></td></tr><tr><td>DB_TYPE</td><td>Optional</td><td><code>string</code></td><td>Specify DB to use</td><td><code>MongoDB | FakeDB</code></td></tr><tr><td>DB_CONNECTION_STRING</td><td>Required</td><td><code>string</code></td><td>Specifies URL for MongoDB Database</td><td></td></tr><tr><td>PORT</td><td>Optional</td><td><code>integer</code></td><td>Specifies Port for Server</td><td></td></tr><tr><td>LOGIN_PAGE_URL</td><td>Required</td><td><code>string</code></td><td>Login url to be used in emailing service</td><td></td></tr><tr><td>REDIS_HOST</td><td>Required</td><td><code>string</code></td><td>Host address for Redis database</td><td></td></tr><tr><td>REDIS_PORT</td><td>Required</td><td><code>integer</code></td><td>Port for Redis database</td><td></td></tr><tr><td>TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for token to live</td><td>In vercel/ms format https://github.com/vercel/ms</td></tr><tr><td>REFRESH_TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for refresh token to live</td><td></td></tr><tr><td>PAGESPEED_API_KEY</td><td>Optional</td><td><code>string</code></td><td>API Key for PageSpeed requests</td><td></td></tr><tr><td>SYSTEM_EMAIL_HOST</td><td>Required</td><td><code>string</code></td><td>Host to send System Emails From</td><td></td></tr><tr><td>SYSTEM_EMAIL_PORT</td><td>Required</td><td><code>number</code></td><td>Port for System Email Host</td><td></td></tr><tr><td>SYSTEM_EMAIL_ADDRESS</td><td>Required</td><td><code>string</code></td><td>System Email Address</td><td></td></tr><tr><td>SYSTEM_EMAIL_PASSWORD</td><td>Required</td><td><code>string</code></td><td>System Email Password</td><td></td></tr></tbody></table>
 
