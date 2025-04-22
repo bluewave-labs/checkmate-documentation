@@ -18,6 +18,10 @@ When you add a new page speed monitor, it is added here. Click on the "Create ne
 
 Here, both monitors are shown as "Live (Collecting Data)" with a green dot, indicating they are actively monitoring. Each monitor has a small graph, representing recent pagespeed performance over time.
 
+{% hint style="info" %}
+The URL you enter in Pagespeed monitor will be shared with Google.
+{% endhint %}
+
 ### Details of a pagespeed monitor
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-10-03 at 11.41.55 PM.png" alt=""><figcaption></figcaption></figure>
