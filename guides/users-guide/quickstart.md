@@ -51,27 +51,28 @@ Make sure you change the directory to the specified directories, as paths in com
 
 ### Cloning and initial setup
 
-This application consists of a frontend (client) and a backend (server). We recommend you create a directory, let's call it `checkmate`, to hold both the **Client** and the **Server** in one location.
+This application consists of a frontend (client) and a backend (server) on the same repository. We recommend you create a directory, let's call it `checkmate`, to hold both the **Client** and the **Server** in one location.
 
 1. CD into your `checkmate` directory
-2. Clone the [Client repository](https://github.com/bluewave-labs/checkmate). We'll refer to this directory as `client`
-3. Clone the [Server repository](https://github.com/bluewave-labs/checkmate-backend). We'll refer to this directory as `server`
+2. Clone the Checkmate[ repository](https://github.com/bluewave-labs/checkmate).&#x20;
+
+That's it. Now go to the next step.
 
 ### Setting up Docker images
 
-This application requires a MongoDB instance and a Redis instance. If you want, you can use our Docker images. Otherwise you can provide your own instances.
+This application requires a MongoDB instance and a Redis instance. If you want, you can use our Docker images. Otherwise, you can provide your own instances as well.
 
 1. From your `checkmate` directory you created above, cd into `server/docker/dev`.
 2. Run `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
 3. Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`&#x20;
 
 {% hint style="danger" %}
-The default Checkmate Redis Docker image does not include authentication. If your setup requires authentication (e.g especially if you are exposing the server on a public IP), you'll need to configure it manually.
+The default Checkmate Redis Docker image does not include authentication. If your setup requires authentication (e.g, especially if you expose the server on a public IP), you'll need to manually configure it.
 {% endhint %}
 
 ### Server set up
 
-The server requires some configuration in order to run.
+The server requires some configuration to run.
 
 1. From your `checkmate` directory, CD into the `server` directory.
 2. Run `npm install`.
