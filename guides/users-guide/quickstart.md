@@ -51,12 +51,7 @@ Make sure you change the directory to the specified directories, as paths in com
 
 ### Cloning and initial setup
 
-This application consists of a frontend (client) and a backend (server) on the same repository. We recommend you create a directory, let's call it `checkmate`, to hold both the **Client** and the **Server** in one location.
-
-1. CD into your `checkmate` directory
-2. Clone the Checkmate[ repository](https://github.com/bluewave-labs/checkmate).&#x20;
-
-That's it. Now go to the next step.
+This application consists of a frontend (client) and a backend (server) in a single repository. Start by cloning the [repo](https://github.com/bluewave-labs/checkmate), as it contains everything you need, except the [Capture agent](https://github.com/bluewave-labs/capture) if you plan to use the Infrastructure Monitoring feature.
 
 ### Setting up Docker images
 
