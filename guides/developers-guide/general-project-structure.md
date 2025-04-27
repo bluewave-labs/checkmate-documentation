@@ -4,8 +4,8 @@ icon: diagram-project
 
 # General project structure
 
-{% hint style="info" %}
-This is a brief overview of the project structure. If you are a serious developer and would like to learn how Checkmate works, please check [this link](https://deepwiki.com/bluewave-labs/checkmate) :)
+{% hint style="success" %}
+This is a brief overview of the project structure. If you are a serious developer and would like to learn how Checkmate works in detail, please check [this link](https://deepwiki.com/bluewave-labs/checkmate) :)
 {% endhint %}
 
 The Uptime Manager product uses the MERN stack, which is to say that the project uses:
