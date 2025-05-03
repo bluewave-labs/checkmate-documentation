@@ -2,6 +2,7 @@
 description: >-
   Distributed uptime monitor will be available for the public starting from
   version 2.1. Please get in touch with us if you would like to see a demo.
+hidden: true
 icon: globe
 ---
 
