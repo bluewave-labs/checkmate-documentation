@@ -43,7 +43,68 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 ***
 
-## Quickstart for developers <a href="#dev-quickstart" id="dev-quickstart"></a>
+## Quickstart for developers (Windows) <a href="#dev-quickstart" id="dev-quickstart"></a>
+
+### Step 1: Fork and clone the repository
+
+1. **Fork the repository:** Go to the Checkmate GitHub repository and fork it to your account.
+2.  **Clone the repository:** Open your terminal or command prompt and run:
+
+    ```
+    git clone https://github.com/your-username/checkmate.git
+    cd checkmate
+    ```
+
+### Step 2: Set up the backend (server)
+
+1. **Navigate to the server directory:**
+2. `cd server`
+3. **Install dependencies:**
+4. `npm install`
+5. **Create a `.env` File:** Add a `.env` file in the `server` directory to hold your server secrets.
+
+\
+Step 3: Build and Run MongoDB and Redis Docker Images
+
+1. **Navigate to the main directory:**
+2. `cd ..`
+3.  **Build Docker Images:**
+
+    ```
+    docker build -f ./docker/dev/mongoDB.Dockerfile -t uptime_database_mongo .
+    docker build -f ./docker/dev/redis.Dockerfile -t uptime_redis .
+    ```
+4. **Navigate to the docker/dev directory:**
+5. `cd server/docker/dev`
+6.  **Run Docker containers:**
+
+    ```
+    docker run -d -p 27017:27017 -v %cd%/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo
+    docker run -d -p 6379:6379 -v %cd%/redis/data:/data --name uptime_redis uptime_redis
+    ```
+
+### Step 4: Start the backend server
+
+1. **Navigate to the server directory:**
+2. `cd into server.`
+3. **Run the development server:**
+4. `npm run dev`
+5. Your backend should now be up and running.
+
+### Step 5: Set up the frontend (client)
+
+1. **Navigate to the client directory:**
+2. `cd client`
+3. **Install dependencies:**
+4. `npm install`
+5. **Create a `.env` File:** Add a `.env` file in the `client` directory to hold your client secrets.
+6. **Run the client (a.k.a frontend):**
+7. `npm run dev`
+8. Your frontend should now be up and running.
+
+***
+
+## Quickstart for developers (Linux and MacOS) <a href="#dev-quickstart" id="dev-quickstart"></a>
 
 {% hint style="info" %}
 Make sure you change the directory to the specified directories, as paths in commands are relative.
@@ -93,7 +154,7 @@ The client also requires some configuration in order to run.
 
 ***
 
-### Client env vars <a href="#install-client" id="install-client"></a>
+## Client env vars <a href="#install-client" id="install-client"></a>
 
 1. Change directory to the `Client` directory
 2. Install all dependencies by running `npm install`
@@ -153,7 +214,7 @@ Note that for the Pagespeed feature to work, you need a [free Google Pagespeed A
 
 ***
 
-### API documentation <a href="#api-documentation" id="api-documentation"></a>
+## API documentation <a href="#api-documentation" id="api-documentation"></a>
 
 Our API is documented in accordance with the [OpenAPI spec](https://www.openapis.org/).
 
@@ -161,7 +222,9 @@ You can see the documentation on your local development server at http://localho
 
 You can also view the documentation on our demo server at [https://uptime-demo.bluewavelabs.ca/api-docs](https://uptime-demo.bluewavelabs.ca/api-docs)
 
-### Error handling
+***
+
+## Error handling
 
 Errors are returned in a standard format:
 
