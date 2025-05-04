@@ -79,8 +79,8 @@ Step 3: Build and Run MongoDB and Redis Docker Images
 6.  **Run Docker containers:**
 
     ```
-    docker run -d -p 27017:27017 -v %cd%/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo
-    docker run -d -p 6379:6379 -v %cd%/redis/data:/data --name uptime_redis uptime_redis
+    docker run -d -p 6379:6379 -v $PWD/redis/data:/data --name uptime_redis uptime_redis
+    docker run -d -p 27017:27017 -v $PWD/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo
     ```
 
 ### Step 4: Start the backend server
