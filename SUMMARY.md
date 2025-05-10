@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome to Checkmate](README.md)
+* [Welcome to Checkmate 2.0.2](README.md)
 
 ## USER'S GUIDE
 
