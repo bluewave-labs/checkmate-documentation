@@ -7,7 +7,7 @@ icon: gauge-min
 Under **Dashboard > Pagespeed**, you can see an overview of pagespeed monitors for different websites. This dashboard helps you view optimal website performance by providing clear, actionable insights into various aspects of your site's speed and user experience.
 
 {% hint style="warning" %}
-The Pagespeed section requires a Google PageSpeed API. Click [here](https://developers.google.com/speed/docs/insights/v5/get-started) and get your API, and then add it to your .env variable (PAGESPEED\_API\_KEY). See [quickstart.md](quickstart.md "mention") section on how to add this API key.
+The Pagespeed section requires a Google PageSpeed API. Click [here](https://developers.google.com/speed/docs/insights/v5/get-started) and get your API, and then add it in Settings.&#x20;
 {% endhint %}
 
 

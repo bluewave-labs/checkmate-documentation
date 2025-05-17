@@ -150,7 +150,7 @@ The client also requires some configuration in order to run.
 ### Access the application
 
 1. The `client` is running at `localhost:5173` (unless you changed the default port).
-2. The `server` is running at `localhost:5000` (unless you changed the default port).
+2. The `server` is running at `localhost:52345` (unless you changed the default port).
 
 ***
 
@@ -171,7 +171,7 @@ The client also requires some configuration in order to run.
 Sample ENV file:
 
 ```
-VITE_APP_API_BASE_URL="http://localhost:5000/api/v1"
+VITE_APP_API_BASE_URL="http://localhost:52345/api/v1"
 VITE_APP_LOG_LEVEL="debug"
 ```
 
