@@ -54,3 +54,14 @@ If you have a question, head over to GitHub's [discussions](https://github.com/b
 * [MUI (React framework)](https://mui.com/)
 * [Node.js](https://nodejs.org/en)
 * [MongoDB](https://mongodb.com)
+
+### Sponsor Checkmate
+
+Your support helps keep [Checkmate](https://checkmate.so/) alive and improving. Sponsorships go toward covering essential infrastructure like servers, domain costs, and email delivery services.
+
+By sponsoring Checkmate, you’re also investing in the ongoing development of a powerful, open-source monitoring tool that gives teams better visibility and control over their systems.
+
+<a href="https://buymeacoffee.com/gorkemcetin" class="button primary">Support Checkmate today</a>
+
+
+
