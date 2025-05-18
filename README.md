@@ -55,7 +55,7 @@ If you have a question, head over to GitHub's [discussions](https://github.com/b
 * [Node.js](https://nodejs.org/en)
 * [MongoDB](https://mongodb.com)
 
-### Sponsor Checkmate
+## Sponsor Checkmate
 
 Your support helps keep [Checkmate](https://checkmate.so/) alive and improving. Sponsorships go toward covering essential infrastructure like servers, domain costs, and email delivery services.
 
