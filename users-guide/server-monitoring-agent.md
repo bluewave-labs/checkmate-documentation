@@ -8,7 +8,21 @@ To collect hardware information from your servers, you need Capture, a server mo
 
 Capture is a hardware monitoring agent that collects hardware information from the host machine and exposes it through a RESTful API. The agent is designed to be lightweight and easy to use.
 
-Capture is only available for **Linux**.
+## Features
+
+- CPU Monitoring
+  - CPU Temperature
+  - CPU Load
+  - CPU Frequency
+  - CPU Usage
+- Memory Monitoring
+- Disk Monitoring
+  - Usage
+  - Inode Usage
+  - Read/Write Bytes
+- S.M.A.R.T. (System Monitoring and Reporting Tool) monitoring
+
+> **Warning:** S.M.A.R.T. monitoring is only available when using binary installation (not Docker). It also requires the `smartmontools` package to be installed on your system, as Capture relies on the `smartctl` utility for collecting S.M.A.R.T. data. Install `smartmontools` using your system's package manager (e.g., `apt install smartmontools` for Debian/Ubuntu, `yum install smartmontools` for CentOS/RHEL).
 
 ## Docker Installation
 
