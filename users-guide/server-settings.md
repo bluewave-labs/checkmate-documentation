@@ -29,3 +29,7 @@ You can add 3 demo monitors to your platform quickly for testing purposes.
 ### System reset&#x20;
 
 The system will reset itself, removing all monitors and data associated with them.
+
+### Email settings
+
+You can configure your email settings here. Email is used to send notifications to the administrator.
