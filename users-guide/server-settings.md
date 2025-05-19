@@ -20,7 +20,7 @@ You'll need a Google PageSpeed API key if you'd like to use Pagespeed monitor.
 
 ### History of monitoring
 
-Define here for how long you want to keep the data. You can also remove all past data and clear all stats. Note that clearing data is irreversible.
+Define how long you want to keep the data for. You can also remove all past data and clear all stats. Note that clearing data is irreversible.
 
 ### Demo monitors
 
@@ -29,7 +29,3 @@ You can add 3 demo monitors to your platform quickly for testing purposes.
 ### System reset&#x20;
 
 The system will reset itself, removing all monitors and data associated with them.
-
-### Demo monitors
-
-Here you can add and remove demo monitors. It will create 5 demo monitors at the same time so you can test your server.
