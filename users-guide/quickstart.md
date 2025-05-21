@@ -35,8 +35,8 @@ If you’d like to host your Checkmate instance somewhere other than the machine
 
 <pre><code><strong>UPTIME_APP_API_BASE_URL=http://143.110.231.94:52345/api/v1
 </strong><strong>UPTIME_APP_CLIENT_HOST=http://143.110.231.94
-</strong>CLIENT_HOST=http://143.110.231.94
-</code></pre>
+</strong><strong>CLIENT_HOST=http://143.110.231.94
+</strong></code></pre>
 
 Where,
 
