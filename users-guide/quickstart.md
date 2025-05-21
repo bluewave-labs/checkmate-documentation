@@ -27,22 +27,23 @@ Configuration remains the same as the regular server, with two additional fronte
 * **UPTIME\_APP\_API\_BASE\_URL:** http://localhost:52345/api/v1
 * **UPTIME\_APP\_CLIENT\_HOST:** http://localhost
 
+{% hint style="warning" %}
 NOTE:\
 \
-If you’d like to host your Checkmate instance somewhere other than the machine your browser is running on, you will need to update these vars. As an example, if you were hosting at `143.110.231.94`, use the following variables:
+If you’d like to host your Checkmate instance somewhere other than the machine your browser is running on, you will need to update these vars. As an example, if you were hosting at `143.110.231.94`, use the following variables:\
 
-```
-UPTIME_APP_API_BASE_URL=http://143.110.231.94:52345/api/v1
-UPTIME_APP_CLIENT_HOST=http://143.110.231.94
-CLIENT_HOST=http://143.110.231.94
-```
 
-Where,&#x20;
+<pre><code><strong>UPTIME_APP_API_BASE_URL=http://143.110.231.94:52345/api/v1
+</strong><strong>UPTIME_APP_CLIENT_HOST=http://143.110.231.94
+</strong>CLIENT_HOST=http://143.110.231.94
+</code></pre>
+
+Where,
 
 * UPTIME\_APP\_API\_BASE\_URL points the client to the server
 * UPTIME\_APP\_CLIENT\_HOST is used for building some links that point to the client
-* CLIENT\_HOST is the origin that the API server will approve requests from\
-
+* CLIENT\_HOST is the origin that the API server will approve requests from
+{% endhint %}
 
 If you are upgrading from a previous deployment:\
 
