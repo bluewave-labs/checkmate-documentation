@@ -60,13 +60,13 @@ Note that if you want to configure Nginx, you will have to mount a volume to the
 
 <figure><img src="../.gitbook/assets/SCR-20250520-rmgz.png" alt=""><figcaption></figcaption></figure>
 
-### Running on a local machine <a href="#user-quickstart" id="user-quickstart"></a>
+### 2.1 Running on a local machine <a href="#user-quickstart" id="user-quickstart"></a>
 
 1. Download our [Docker compose file](https://raw.githubusercontent.com/bluewave-labs/Checkmate/refs/heads/master/docker/dist/docker-compose.yaml)
 2. Run `docker compose up` to start the application
 3. Now the application is running at `http://localhost`
 
-**Optional Config:**
+**Optional config:**
 
 * If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
 
@@ -77,14 +77,14 @@ Note that if you want to configure Nginx, you will have to mount a volume to the
 
 This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
 
-### Running on a remote server <a href="#user-quickstart" id="user-quickstart"></a>
+### 2.2 Running on a remote server <a href="#user-quickstart" id="user-quickstart"></a>
 
 1. Download our [Docker compose file](https://raw.githubusercontent.com/bluewave-labs/Checkmate/refs/heads/master/docker/dist/docker-compose.yaml)
 2. Edit the `UPTIME_APP_API_BASE_URL` variable in the docker-compose file to point to your remote server.
 3. Run `docker compose up` to start the application
 4. Now the application is running at `http://<remote_server_ip>`
 
-**Optional Config:**
+**Optional config:**
 
 * If you want to monitor Docker containers, uncomment this line in `docker-compose.yaml`:
 
@@ -117,8 +117,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
 4. `npm install`
 5. **Create a `.env` File:** Add a `.env` file in the `server` directory to hold your server secrets.
 
-\
-Step 3: Build and Run MongoDB and Redis Docker Images
+### Step 3: Build and Run MongoDB and Redis Docker Images
 
 1. **Navigate to the main directory:**
 2. `cd ..`
