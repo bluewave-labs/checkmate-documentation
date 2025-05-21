@@ -8,6 +8,7 @@ Installing Checkmate is a fairly straightforward process on a Linux machine. The
 
 1. If you'd like to deploy on a Linux server, we suggest you go with **Combined FE/BE Docker option.** This keeps backend and frontend on one Docker, and Redis and MongoDB on two other Docker services.
 2. If you want to deploy on a Linux server, but want to keep frontend and backend on two separate Docker images, then go with **Separate FE/BE option**. Note that this installation method may not be as straightforward as the first oe.
+3. (For developers), there is also a 3rd option for developers who want to work on the application, e.g extend and test it.
 
 ## Option 1: Combined FE/BE Docker installation (easy method) <a href="#user-quickstart" id="user-quickstart"></a>
 
@@ -99,6 +100,8 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 ## Deploying on Windows <a href="#dev-quickstart" id="dev-quickstart"></a>
 
+This is like option 2, but for Windows machines.
+
 ### Step 1: Fork and clone the repository
 
 1. **Fork the repository:** Go to the Checkmate GitHub repository and fork it to your account.
@@ -157,9 +160,13 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 ***
 
-## Quickstart for developers (Linux and MacOS) <a href="#dev-quickstart" id="dev-quickstart"></a>
+## 3. Developer installation (Linux and MacOS) <a href="#dev-quickstart" id="dev-quickstart"></a>
 
-{% hint style="info" %}
+When you’re working on the app locally, it’s painful to rebuild and reload Docker images every time you tweak the client or server. Instead, run those services directly on your host machine—this gives you instant feedback and lets you use hot-reload without waiting for image builds.
+
+At the same time, we still include Redis and MongoDB as Docker containers. Those services rarely change, so keeping them in containers simplifies setup and avoids cluttering your host environment.
+
+{% hint style="warning" %}
 Make sure you change the directory to the specified directories, as paths in commands are relative.
 {% endhint %}
 
@@ -207,13 +214,11 @@ The client also requires some configuration in order to run.
 
 ***
 
-## Client env vars <a href="#install-client" id="install-client"></a>
+### Client env vars <a href="#install-client" id="install-client"></a>
 
 1. Change directory to the `Client` directory
 2. Install all dependencies by running `npm install`
 3. Add a `.env` file to the `Client` directory with the following options:
-
-#### Environment variables <a href="#env-vars-client" id="env-vars-client"></a>
 
 | ENV Variable Name         | Required/Optional | Type      | Description        | Accepted Values                    |
 | ------------------------- | ----------------- | --------- | ------------------ | ---------------------------------- |
