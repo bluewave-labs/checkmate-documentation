@@ -17,17 +17,8 @@ Requests to the API server are made from your browser. If that is on a different
 
 To get started:
 
-* Grab the compose file via wget/curl:
-
-```
-https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/docker/dist-mono/docker-compose.yaml
-```
-
-* Then run:
-
-```
-docker compose up
-```
+* Download the [Docker compose file](https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/docker/dist-mono/docker-compose.yaml).
+* Run `docker compose up` to start the application.
 
 Your application will spin up at `http://localhost:52345`
 
