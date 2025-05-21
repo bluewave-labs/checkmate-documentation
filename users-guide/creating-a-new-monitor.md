@@ -40,7 +40,7 @@ Stay informed when incidents occur:
 * **Email Notifications:** Receive alerts via email.
 * **Notification integration:** If you want to get notified on Discord, Slack, Telegram or via Webhooks, you can use this section. Click on the button and you'll see a list of notification channels.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ***
 

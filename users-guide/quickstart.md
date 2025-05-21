@@ -4,7 +4,71 @@ icon: sign-posts-wrench
 
 # Installing Checkmate
 
-## Quickstart for users (quick method) <a href="#user-quickstart" id="user-quickstart"></a>
+Installing Checkmate is a fairly straightforward process on a Linux machine. There are many installation options though, which may be overwhelming. Here is a breakdown of all the options:&#x20;
+
+1. If you'd like to deploy on a Linux server, we suggest you go with **Combined FE/BE Docker option.** This keeps backend and frontend on one Docker, and Redis and MongoDB on two other Docker services.
+2. If you want to deploy on a Linux server, but want to keep frontend and backend on two separate Docker images, then go with **Separate FE/BE option**. Note that this installation method may not be as straightforward as the first oe.
+
+## Option 1: Combined FE/BE Docker installation (easy method) <a href="#user-quickstart" id="user-quickstart"></a>
+
+In this installation, the React front-end is served from the API server. There is no Client image as it is not required. Note that this is still a React SPA and is served to your browser where it runs.
+
+Requests to the API server are made from your browser. If that is on a different machine than your API server, then you must configure the API URL appropriately.
+
+To get started:
+
+* Grab the compose file via wget/curl:
+
+```
+https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/docker/dist-mono/docker-compose.yaml
+```
+
+* Then run:
+
+```
+docker compose up
+```
+
+Your application will spin up at `http://localhost:52345`
+
+Configuration remains the same as the regular server, with two additional frontend ENV vars:
+
+* **UPTIME\_APP\_API\_BASE\_URL:** http://localhost:52345/api/v1
+* **UPTIME\_APP\_CLIENT\_HOST:** http://localhost
+
+NOTE:\
+\
+If you’d like to host your Checkmate instance somewhere other than the machine your browser is running on, you will need to update these vars. As an example, if you were hosting at `143.110.231.94`, use the following variables:
+
+```
+UPTIME_APP_API_BASE_URL=http://143.110.231.94:52345/api/v1
+UPTIME_APP_CLIENT_HOST=http://143.110.231.94
+CLIENT_HOST=http://143.110.231.94
+```
+
+Where,&#x20;
+
+* UPTIME\_APP\_API\_BASE\_URL points the client to the server
+* UPTIME\_APP\_CLIENT\_HOST is used for building some links that point to the client
+* CLIENT\_HOST is the origin that the API server will approve requests from\
+
+
+If you are upgrading from a previous deployment:\
+
+
+* As long as you mount the same directories to the MongoDB image you'll retain your data.
+* The Mongo part of the application remains unchanged.
+* You can always back up your data directory as well before migration.
+
+## Option 2: Separate FE/BE Docker installation <a href="#user-quickstart" id="user-quickstart"></a>
+
+In this installation, the React front-end is served by an Nginx Docker image (named Client) and is independent of the API server.
+
+Note that if you want to configure Nginx, you will have to mount a volume to the Client image to override the default config:
+
+<figure><img src="../.gitbook/assets/SCR-20250520-rmgz.png" alt=""><figcaption></figcaption></figure>
+
+### Running on a local machine <a href="#user-quickstart" id="user-quickstart"></a>
 
 1. Download our [Docker compose file](https://raw.githubusercontent.com/bluewave-labs/Checkmate/refs/heads/master/docker/dist/docker-compose.yaml)
 2. Run `docker compose up` to start the application
@@ -21,9 +85,7 @@ icon: sign-posts-wrench
 
 This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
 
-***
-
-## Quickstart for users (remote server) <a href="#user-quickstart" id="user-quickstart"></a>
+### Running on a remote server <a href="#user-quickstart" id="user-quickstart"></a>
 
 1. Download our [Docker compose file](https://raw.githubusercontent.com/bluewave-labs/Checkmate/refs/heads/master/docker/dist/docker-compose.yaml)
 2. Edit the `UPTIME_APP_API_BASE_URL` variable in the docker-compose file to point to your remote server.
@@ -43,7 +105,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
 
 ***
 
-## Quickstart for developers (Windows) <a href="#dev-quickstart" id="dev-quickstart"></a>
+## Deploying on Windows <a href="#dev-quickstart" id="dev-quickstart"></a>
 
 ### Step 1: Fork and clone the repository
 

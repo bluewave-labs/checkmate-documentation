@@ -14,7 +14,7 @@ This is done by deploying monitoring nodes across various regions. This way it p
 
 Currently, Checkmate's distributed uptime functionality is powered by hundreds of thousands of devices globally.&#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Distributed uptime monitor checking Solana's endpoint</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Distributed uptime monitor checking Solana's endpoint</p></figcaption></figure>
 
 ### **How it works**
 
@@ -54,10 +54,10 @@ This page allows you to set up a new monitor to track the availability and perfo
 
 Once you've filled in the details, click the **Save** button to start monitoring the URL.
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Once you are done adding your distributed uptime monitor, you'll see it under its sidebar entry. Here you can also edit, clone, remove or delete an uptime using the gear icon.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you need more information about the distributed uptime monitor, please do not hesitate to [contact u](mailto://helllo@bluewavelabs.ca)s.
