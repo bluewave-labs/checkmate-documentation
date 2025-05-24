@@ -118,10 +118,10 @@ This application consists of a frontend (client) and a backend (server) in a sin
 
 This application requires a MongoDB instance and a Redis instance. If you want, you can use our Docker images. Otherwise, you can provide your instances as well.
 
-1. From your `checkmate` directory you created above, cd into `server/docker/dev`.
+1. From your `checkmate` directory you created above, cd into `docker/dev`.
 2. Run `build_images.sh`
 3. Run `docker run -d -p 6379:6379 -v $(pwd)/redis/data:/data --name uptime_redis uptime_redis`
-4. Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_database_mongo uptime_database_mongo`&#x20;
+4. Run `docker run -d -p 27017:27017 -v $(pwd)/mongo/data:/data/db --name uptime_mongo uptime_mongo`&#x20;
 
 {% hint style="danger" %}
 The default Checkmate Redis Docker image does not include authentication. If your setup requires authentication (e.g, especially if you expose the server on a public IP), you need to configure it manually.
