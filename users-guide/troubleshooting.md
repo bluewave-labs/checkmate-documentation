@@ -78,6 +78,18 @@ UPTIME_APP_API_BASE_URL: "http://192.168.1.2:5000/api/v1"
 
 Yes, this is configurable via the env file. TOKEN\_TTL is the parameter you would want to set.&#x20;
 
+### Q: How do I add ntfy.sh support?&#x20;
+
+1. Create a topic on your NTFY server.
+2.  (Only if you require authentication for your NTFY Server):
+
+    Generate an authentication token via the command below on the NTFY server:&#x20;
+
+    echo -n "Basic `echo -n 'username:password' | base64`" | base64 | tr -d '=' (Change username:password in your actual NTFY username and password)
+3. Add the link to the webhook in CheckMate.
+   1. With Authentication: [https://ntfy.example.com/topic?auth=authenticationtoken-from-step2](https://ntfy.example.com/topic?auth=authenticationtoken-from-step2)
+   2. Without Authentication: [https://ntfy.example.com/topic](https://ntfy.example.com/topic)
+
 ### Q: Checkmate server fails to interact with docker.sock. How do I fix it?&#x20;
 
 If the Checkmate server fails to interact with docker.sock when mounting the volume, follow those troubleshooting steps:
