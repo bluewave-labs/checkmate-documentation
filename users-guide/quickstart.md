@@ -94,7 +94,7 @@ This gives the app access to your docker daemon via unix socket, please be aware
   # - /var/run/docker.sock:/var/run/docker.sock:ro
 ```
 
-This gives the app access to your docker daemon via unix socket, please be aware of what you are doing.
+This gives the app access to your Docker daemon via unix socket, please be aware of what you are doing.
 
 ***
 
@@ -160,7 +160,15 @@ This is like option 2, but for Windows machines.
 
 ***
 
-## 3. Developer installation (Linux and MacOS) <a href="#dev-quickstart" id="dev-quickstart"></a>
+## Deploying on ARM machines <a href="#dev-quickstart" id="dev-quickstart"></a>
+
+If you would like to install Checkmate on Raspberry PI 4, Raspberry PI 5 or MacOS, [use this link](https://github.com/bluewave-labs/Checkmate/blob/develop/docker%2Fdist-arm%2Fdocker-compose.yaml) to download the Docker compose file. Then run the usual `docker compose up` command to start instances.
+
+Your application will spin up at `http://localhost:52345`&#x20;
+
+Configuration environment variables is the same as what you'd use in Option 1 section above.
+
+## Developer installation (Linux and MacOS) <a href="#dev-quickstart" id="dev-quickstart"></a>
 
 When you’re working on the app locally, it’s painful to rebuild and reload Docker images every time you tweak the client or server. Instead, run those services directly on your host machine—this gives you instant feedback and lets you use hot-reload without waiting for image builds.
 
