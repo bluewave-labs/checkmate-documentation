@@ -6,6 +6,10 @@ icon: server
 
 The infrastructure monitor is the only feature of Checkmate that retrieves data from remote servers using Checkmate's server agent, Capture. In order to check a remote server's CPU, disk, memory and disk, you need to install Checkmate agent first. Please read [this section](server-monitoring-agent.md) to install Capture.
 
+{% hint style="warning" %}
+Note that Capture agent is not installed on the Checkmate server by default.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 For an available list of platforms and what kind of data Capture retrieves, [please see this table](https://github.com/bluewave-labs/capture).
