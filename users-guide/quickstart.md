@@ -131,7 +131,7 @@ This is like option 2, but for Windows machines.
     docker build -f ./docker/dev/redis.Dockerfile -t uptime_redis .
     ```
 4. **Navigate to the docker/dev directory:**
-5. `cd server/docker/dev`
+5. `cd docker/dev`
 6.  **Run Docker containers:**
 
     ```
