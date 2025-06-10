@@ -265,13 +265,12 @@ DB_CONNECTION_STRING="mongodb://localhost:27017/uptime_db"
 REDIS_HOST="127.0.0.1"
 REDIS_PORT=6379
 TOKEN_TTL="99d"
-PAGESPEED_API_KEY=<api_key>
+PAGESPEED_API_KEY=<your_pagespeed_api_key>
 SYSTEM_EMAIL_HOST="smtp.gmail.com"
 SYSTEM_EMAIL_PORT=465
 SYSTEM_EMAIL_ADDRESS=<email_address>
 SYSTEM_EMAIL_PASSWORD=<password>
 REFRESH_TOKEN_SECRET="my_refresh"
-REFRESH_TOKEN_TTL="99d"
 ```
 
 {% hint style="warning" %}
