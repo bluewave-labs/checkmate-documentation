@@ -253,24 +253,16 @@ Configure the server with the following environmental variables. **Note that tho
 
 
 
-<table><thead><tr><th width="239">ENV Variable Name</th><th width="149">Required/Optional</th><th width="116">Type</th><th>Description</th><th>Accepted Values</th></tr></thead><tbody><tr><td>CLIENT_HOST</td><td>Required</td><td><code>string</code></td><td>Frontend Host</td><td></td></tr><tr><td>JWT_SECRET</td><td>Required</td><td><code>string</code></td><td>JWT secret</td><td></td></tr><tr><td>REFRESH_TOKEN_SECRET</td><td>Required</td><td><code>string</code></td><td>Refresh JWT secret</td><td></td></tr><tr><td>DB_TYPE</td><td>Optional</td><td><code>string</code></td><td>Specify DB to use</td><td><code>MongoDB | FakeDB</code></td></tr><tr><td>DB_CONNECTION_STRING</td><td>Required</td><td><code>string</code></td><td>Specifies URL for MongoDB Database</td><td></td></tr><tr><td>PORT</td><td>Optional</td><td><code>integer</code></td><td>Specifies Port for Server</td><td></td></tr><tr><td>LOGIN_PAGE_URL</td><td>Required</td><td><code>string</code></td><td>Login url to be used in emailing service</td><td></td></tr><tr><td>REDIS_HOST</td><td>Required</td><td><code>string</code></td><td>Host address for Redis database</td><td></td></tr><tr><td>REDIS_PORT</td><td>Required</td><td><code>integer</code></td><td>Port for Redis database</td><td></td></tr><tr><td>TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for token to live</td><td>In vercel/ms format https://github.com/vercel/ms</td></tr><tr><td>REFRESH_TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for refresh token to live</td><td></td></tr><tr><td>PAGESPEED_API_KEY</td><td><strong>Deprecated</strong></td><td></td><td>API Key for PageSpeed requests</td><td>This API key can be set up in Settings.</td></tr><tr><td>SYSTEM_EMAIL_HOST</td><td>Required</td><td><code>string</code></td><td>Host to send System Emails From</td><td></td></tr><tr><td>SYSTEM_EMAIL_PORT</td><td>Required</td><td><code>number</code></td><td>Port for System Email Host</td><td></td></tr><tr><td>SYSTEM_EMAIL_ADDRESS</td><td>Required</td><td><code>string</code></td><td>System Email Address</td><td></td></tr><tr><td>SYSTEM_EMAIL_PASSWORD</td><td>Required</td><td><code>string</code></td><td>System Email Password</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="239">ENV Variable Name</th><th width="149">Required/Optional</th><th width="116">Type</th><th>Description</th><th>Accepted Values</th></tr></thead><tbody><tr><td>CLIENT_HOST</td><td>Required</td><td><code>string</code></td><td>Frontend host</td><td></td></tr><tr><td>JWT_SECRET</td><td>Required</td><td><code>string</code></td><td>JWT secret</td><td></td></tr><tr><td>DB_CONNECTION_STRING</td><td>Required</td><td><code>string</code></td><td>Specifies URL for MongoDB database</td><td></td></tr><tr><td>ORIGIN</td><td>Required</td><td><code>string</code></td><td>Origin where requests to server originate from, for CORS purposes</td><td>localhost</td></tr><tr><td>LOG_LEVEL</td><td>Optional</td><td><code>string</code></td><td>Debug level</td><td>Can be one of debug, info, warn, error</td></tr><tr><td>DB_TYPE</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Specify DB to use</td><td><code>MongoDB | FakeDB</code></td></tr><tr><td>REFRESH_TOKEN_SECRET</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Refresh JWT secret</td><td></td></tr><tr><td>PORT</td><td><strong>Deprecated</strong></td><td><code>integer</code></td><td>Specifies port for server</td><td></td></tr><tr><td>LOGIN_PAGE_URL</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Login URL to be used in emailing service</td><td></td></tr><tr><td>REDIS_HOST</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Host address for Redis database</td><td></td></tr><tr><td>REDIS_PORT</td><td><strong>Deprecated</strong></td><td><code>integer</code></td><td>Port for Redis database</td><td></td></tr><tr><td>TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for token to live</td><td>In vercel/ms format https://github.com/vercel/ms</td></tr><tr><td>PAGESPEED_API_KEY</td><td><strong>Deprecated</strong></td><td></td><td>API Key for PageSpeed requests</td><td>This API key can be set up in Settings.</td></tr><tr><td>SYSTEM_EMAIL_HOST</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Host to send system emails from</td><td></td></tr><tr><td>SYSTEM_EMAIL_PORT</td><td><strong>Deprecated</strong></td><td><code>number</code></td><td>Port for system email host</td><td></td></tr><tr><td>SYSTEM_EMAIL_ADDRESS</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>System email address</td><td></td></tr><tr><td>SYSTEM_EMAIL_PASSWORD</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>System email password</td><td></td></tr></tbody></table>
 
-Sample env file
+Sample, minimum env file is as follows:
 
 ```
 CLIENT_HOST="http://localhost:5173"
 JWT_SECRET="my_secret"
-DB_TYPE="MongoDB"
 DB_CONNECTION_STRING="mongodb://localhost:27017/uptime_db"
-REDIS_HOST="127.0.0.1"
-REDIS_PORT=6379
 TOKEN_TTL="99d"
-PAGESPEED_API_KEY=<your_pagespeed_api_key>
-SYSTEM_EMAIL_HOST="smtp.gmail.com"
-SYSTEM_EMAIL_PORT=465
-SYSTEM_EMAIL_ADDRESS=<email_address>
-SYSTEM_EMAIL_PASSWORD=<password>
-REFRESH_TOKEN_SECRET="my_refresh"
+ORIGIN="localhost"
 ```
 
 {% hint style="warning" %}
@@ -281,11 +273,7 @@ Note that for the Pagespeed feature to work, you need a [free Google Pagespeed A
 
 ## API documentation <a href="#api-documentation" id="api-documentation"></a>
 
-Our API is documented in accordance with the [OpenAPI spec](https://www.openapis.org/).
-
-You can see the documentation on your local development server at http://localhost:{port}/api-docs
-
-You can also view the documentation on our demo server [here](https://checkmate-demo.bluewavelabs.ca/api-docs).&#x20;
+Our API documentation follows the [OpenAPI spec](https://www.openapis.org/). You can see the documentation on your local development server at http://localhost:{port}/api-docs . You can also view the documentation on our demo server [here](https://checkmate-demo.bluewavelabs.ca/api-docs). Just a note that the API documentation is still in the works. Let us know in our Discord channel if you have any questions about the latest status.
 
 ***
 
