@@ -20,6 +20,10 @@ layout:
 
 # Welcome to Checkmate 2.1
 
+{% hint style="info" %}
+This documentation also applies to Checkmate 2.1.1
+{% endhint %}
+
 Checkmate is an open-source, self-hosted tool designed to track and monitor server hardware, uptime, response times, and incidents in real-time with beautiful visualizations.
 
 It uses [Capture](https://github.com/bluewave-labs/capture) to get data from remote servers and doesn't need anything other than the Checkmate server itself to monitor uptime and page speed.
