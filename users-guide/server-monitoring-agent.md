@@ -13,18 +13,19 @@ Capture is available for **Linux, Windows, Mac, Raspberry PI or any device that 
 ## Features
 
 - CPU Monitoring
-  - CPU Temperature
-  - CPU Load
-  - CPU Frequency
-  - CPU Usage
+  - Temperature
+  - Load
+  - Frequency
+  - Usage
 - Memory Monitoring
 - Disk Monitoring
   - Usage
   - Inode Usage
   - Read/Write Bytes
-- S.M.A.R.T. (System Monitoring and Reporting Tool) monitoring
+- S.M.A.R.T. Monitoring (Self-Monitoring, Analysis and Reporting Technology)
 - Network Monitoring
 - Docker Container Monitoring
+- GPU Monitoring (coming soon)
 
 > **Warning:** S.M.A.R.T. monitoring is only available when using binary installation (not Docker). It also requires the `smartmontools` package to be installed on your system, as Capture relies on the `smartctl` utility for collecting S.M.A.R.T. data. Install `smartmontools` using your system's package manager (e.g., `apt install smartmontools` for Debian/Ubuntu, `yum install smartmontools` for CentOS/RHEL).
 > Note: S.M.A.R.T. monitoring is not supported in Docker installations.
