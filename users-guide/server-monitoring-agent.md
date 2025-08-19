@@ -10,6 +10,25 @@ When Capture runs on the remote server, it starts collecting hardware informatio
 
 Capture is available for **Linux, Windows, Mac, Raspberry PI or any device that can run Go**.
 
+## Features
+
+- CPU Monitoring
+  - CPU Temperature
+  - CPU Load
+  - CPU Frequency
+  - CPU Usage
+- Memory Monitoring
+- Disk Monitoring
+  - Usage
+  - Inode Usage
+  - Read/Write Bytes
+- S.M.A.R.T. (System Monitoring and Reporting Tool) monitoring
+- Network Monitoring
+- Docker Container Monitoring
+
+> **Warning:** S.M.A.R.T. monitoring is only available when using binary installation (not Docker). It also requires the `smartmontools` package to be installed on your system, as Capture relies on the `smartctl` utility for collecting S.M.A.R.T. data. Install `smartmontools` using your system's package manager (e.g., `apt install smartmontools` for Debian/Ubuntu, `yum install smartmontools` for CentOS/RHEL).
+> Note: S.M.A.R.T. monitoring is not supported in Docker installations.
+
 ## Docker Installation
 
 Docker installation is **recommended** for running the Capture. Please see the [Docker run flags](server-monitoring-agent.md#docker-run-flags) section for more information.
