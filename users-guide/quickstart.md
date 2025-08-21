@@ -36,8 +36,8 @@ If you’d like to host your Checkmate instance somewhere other than the machine
 
 Where,
 
-* UPTIME\_APP\_API\_BASE\_URL points the client to the server
-* UPTIME\_APP\_CLIENT\_HOST is used for building some links that point to the client
+* UPTIME\_APP\_API\_BASE\_URL points the frontend to the backend
+* UPTIME\_APP\_CLIENT\_HOST is used for building some links that point to the frontend
 * CLIENT\_HOST is the origin that the API server will approve requests from
 {% endhint %}
 
@@ -50,9 +50,9 @@ If you are upgrading from a previous deployment:\
 
 ## Option 2: Separate FE/BE Docker installation <a href="#user-quickstart" id="user-quickstart"></a>
 
-In this installation, the React front-end is served by an Nginx Docker image (named Client) and is independent of the API server.
+In this installation, the React front-end is served by an Nginx Docker image (named Frontend) and is independent of the API server.
 
-Note that if you want to configure Nginx, you will have to mount a volume to the Client image to override the default config:
+Note that if you want to configure Nginx, you will have to mount a volume to the Frontend image to override the default config:
 
 <figure><img src="../.gitbook/assets/SCR-20250520-rmgz.png" alt=""><figcaption></figcaption></figure>
 
@@ -161,7 +161,7 @@ If you would like to install Checkmate on Raspberry PI 4, Raspberry PI 5 or MacO
 
 Your application will spin up at `http://localhost:52345`&#x20;
 
-Configuration environment variables is the same as what you'd use in Option 1 section above.
+Configuration environment variables are the same as what you'd use in Option 1 section above.
 
 ## Developer installation (Linux and MacOS) <a href="#dev-quickstart" id="dev-quickstart"></a>
 
@@ -248,7 +248,7 @@ Configure the server with the following environmental variables. **Note that tho
 
 
 
-<table><thead><tr><th width="239">ENV Variable Name</th><th width="149">Required/Optional</th><th width="116">Type</th><th>Description</th><th>Accepted Values</th></tr></thead><tbody><tr><td>CLIENT_HOST</td><td>Required</td><td><code>string</code></td><td>Frontend host</td><td></td></tr><tr><td>JWT_SECRET</td><td>Required</td><td><code>string</code></td><td>JWT secret</td><td></td></tr><tr><td>DB_CONNECTION_STRING</td><td>Required</td><td><code>string</code></td><td>Specifies URL for MongoDB database</td><td></td></tr><tr><td>ORIGIN</td><td>Required</td><td><code>string</code></td><td>Origin where requests to server originate from, for CORS purposes</td><td>localhost</td></tr><tr><td>LOG_LEVEL</td><td>Optional</td><td><code>string</code></td><td>Debug level</td><td>Can be one of debug, info, warn, error</td></tr><tr><td>DB_TYPE</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Specify DB to use</td><td><code>MongoDB | FakeDB</code></td></tr><tr><td>REFRESH_TOKEN_SECRET</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Refresh JWT secret</td><td></td></tr><tr><td>PORT</td><td><strong>Deprecated</strong></td><td><code>integer</code></td><td>Specifies port for server</td><td></td></tr><tr><td>LOGIN_PAGE_URL</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Login URL to be used in emailing service</td><td></td></tr><tr><td>REDIS_HOST</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Host address for Redis database</td><td></td></tr><tr><td>REDIS_PORT</td><td><strong>Deprecated</strong></td><td><code>integer</code></td><td>Port for Redis database</td><td></td></tr><tr><td>TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for token to live</td><td>In vercel/ms format https://github.com/vercel/ms</td></tr><tr><td>PAGESPEED_API_KEY</td><td><strong>Deprecated</strong></td><td></td><td>API Key for PageSpeed requests</td><td>This API key can be set up in Settings.</td></tr><tr><td>SYSTEM_EMAIL_HOST</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>Host to send system emails from</td><td></td></tr><tr><td>SYSTEM_EMAIL_PORT</td><td><strong>Deprecated</strong></td><td><code>number</code></td><td>Port for system email host</td><td></td></tr><tr><td>SYSTEM_EMAIL_ADDRESS</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>System email address</td><td></td></tr><tr><td>SYSTEM_EMAIL_PASSWORD</td><td><strong>Deprecated</strong></td><td><code>string</code></td><td>System email password</td><td></td></tr></tbody></table>
+<table><thead><tr><th width="239">ENV Variable Name</th><th width="149">Required/Optional</th><th width="116">Type</th><th>Description</th><th>Accepted Values</th></tr></thead><tbody><tr><td>CLIENT_HOST</td><td>Required</td><td><code>string</code></td><td>Frontend host</td><td></td></tr><tr><td>JWT_SECRET</td><td>Required</td><td><code>string</code></td><td>JWT secret</td><td></td></tr><tr><td>DB_CONNECTION_STRING</td><td>Required</td><td><code>string</code></td><td>Specifies URL for MongoDB database</td><td></td></tr><tr><td>ORIGIN</td><td>Required</td><td><code>string</code></td><td>Origin where requests to server originate from, for CORS purposes</td><td>localhost</td></tr><tr><td>LOG_LEVEL</td><td>Optional</td><td><code>string</code></td><td>Debug level</td><td>Can be one of debug, info, warn, error</td></tr><tr><td>TOKEN_TTL</td><td>Optional</td><td><code>string</code></td><td>Time for token to live</td><td>In vercel/ms format https://github.com/vercel/ms</td></tr></tbody></table>
 
 Sample, minimum env file is as follows:
 
