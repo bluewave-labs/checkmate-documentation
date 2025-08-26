@@ -42,15 +42,13 @@ If there is a TLS/SSL error when connecting to a service, you can tell Checkmate
 
 Set the frequency of checks. The default is 1 minute, but you can adjust this based on your requirements.
 
-After completing all configurations, click the **Create monitor** button at the bottom-right to activate your monitor.
-
 ### Response validations
 
 When creating or configuring an uptime monitor in Checkmate, you have access to advanced settings that allow for precise response validation. This guide explains how to use these features effectively.
 
 **Match method**
 
-The Match Method determines how Checkmate compares your expected value with the actual response data.
+The `Match` method determines how Checkmate compares your expected value with the actual response data.
 
 | Method  | Description                                               | Example                                                     |
 | ------- | --------------------------------------------------------- | ----------------------------------------------------------- |
@@ -91,23 +89,16 @@ The JSON Path field allows you to extract and validate specific data from JSON r
 
 **Scenario 3: Checking for Error Messages**
 
-| Field          | Value   | Explanation                    |
-| -------------- | ------- | ------------------------------ |
-| Match Method   | Include | Partial match is sufficient    |
-| Expected Value | error   | Looking for any error message  |
-| JSON Path      | message | Extract only the message field |
+<table data-header-hidden><thead><tr><th></th><th width="202.015625"></th><th></th></tr></thead><tbody><tr><td>Field</td><td>Value</td><td>Explanation</td></tr><tr><td>Match Method</td><td>Include</td><td>Partial match is sufficient</td></tr><tr><td>Expected Value</td><td>error</td><td>Looking for any error message</td></tr><tr><td>JSON Path</td><td>message</td><td>Extract only the message field</td></tr></tbody></table>
 
-When monitoring websites, it’s essential to understand how Checkmate evaluates responses:
+When monitoring websites, it’s essential to understand how Checkmate evaluates responses. This is how response checking works:
 
-\
-How response checking works:
-
-1. Response Body Only: The Expected Value field checks the response body content only, not HTTP metadata like status codes. Checkmate does not provide a direct way to check the HTTP status code through Expected Value.
-2. For Website Monitoring (HTML Responses):
+1. **Response Body Only:** The Expected Value field checks the response body content only, not HTTP metadata like status codes. Checkmate does not provide a direct way to check the HTTP status code through Expected Value.
+2. **For Website Monitoring**
    1. Focus on checking for content that should be present on your website:
       1. Use Expected Value: Google with Match Method: Include for Google.com
-      2. Use Expected Value: \<html with Match Method: Include for most websites
-3. For JSON API Monitoring:
+      2. Use Expected Value: `<html` with Match Method: Include for most websites
+3. **For JSON API Monitoring**
    1. If the API includes the status code in the response body, use JSON Path to extract it:
       1. JSON Path: status with Expected Value: success
    2. For API health checks, look for specific content or status indicators in the response body
@@ -121,7 +112,5 @@ How response checking works:
 | Any site   | \</html>       | Include      | empty          | Checks if the HTML document is properly closed |
 | API        | "success"      | Include      | empty          | Checks if response contains success message    |
 | JSON API   | true           | Equal        | status.success | Checks if success field is true in JSON        |
-
-Remember that for a reliable monitoring, check for content that’s consistently present in your specific website or API response.
 
 \
