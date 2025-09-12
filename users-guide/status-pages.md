@@ -56,6 +56,5 @@ Toggle extra display options on your status page:
 
     Normally the admin login link is not shown on the status page. You can enable it here.
 
+Don’t forget to click **Save** after you make updates.
 
-
-Don’t forget to click **Save** after you make updates here.
